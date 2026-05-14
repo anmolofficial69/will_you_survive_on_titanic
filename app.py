@@ -5,7 +5,7 @@ import joblib
 import os
 
 app = Flask(__name__)
-model=joblib.load('titanic_model(1).pkl')
+model=joblib.load('titanic_model.pkl')
 @app.route('/')
 def home():
     return render_template('index.html')
