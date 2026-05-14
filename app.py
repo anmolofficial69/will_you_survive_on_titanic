@@ -5,14 +5,13 @@ import joblib
 import os
 
 app = Flask(__name__)
-model=joblib.load('titanic_model.pkl')
 @app.route('/')
 def home():
     return render_template('index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
-
+    model=joblib.load('titanic_model.pkl')
     sex=request.form['sex']
     if sex=='male' or sex=='Male':
         sex=0
